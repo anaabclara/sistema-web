@@ -4,6 +4,7 @@
     --rosa: #E4B1AB;
     --branco: #FFFFFF;
     --preto: #000000;
+    --rosa_claro: #FDE1DE;
 }
 
 *{
@@ -17,6 +18,7 @@ body{
 }
 
 .topo{
+   
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,6 +29,7 @@ body{
 ul{
     display: flex;
     justify-content: center;  
+    align-items: center;
 }
 
 li{
@@ -41,8 +44,15 @@ a{
 }
 
 .botão-secundario{
-    border: 2px solid black ;
+    padding: 0.4rem 0.5rem;
+   background-color: var(--rosa);
+   color: var(--branco);
     border-radius: 5px;
+}
+
+.topo  .botão-secundario:hover{
+    background-color: var(--rosa_claro); 
+    color: var(--rosa)
 }
    
 .topo img{
@@ -56,6 +66,7 @@ a{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 
  
 }
@@ -78,6 +89,11 @@ a{
     object-fit: cover;
 
 }
+.corpo .esquerda .botao-primario:hover{
+    background-color: var(--rosa_claro); 
+    color: var(--branco)
+}
+
 
 .esquerda{
     display: flex;
@@ -124,8 +140,8 @@ p,h1{
 }
 
 #produtos {
-    width: 100%;
     display: flex;
+    max-width: fit-content;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -138,6 +154,7 @@ p,h1{
     flex-direction: row;
     gap: 30px;
     justify-content: space-between;
+    flex-wrap: wrap;
     width: 100%;
     padding: 50px 80px;
 }
@@ -164,6 +181,12 @@ p,h1{
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
 }
+
+.produto .botao-produtos:hover{
+    background-color: var(--rosa_claro); 
+    color: var(--rosa)
+}
+
 
 
 
@@ -236,15 +259,26 @@ h3 {
     color: var(--branco);
 }
 
+#beneficios .botao-primario:hover{
+    background-color: var(--rosa_claro); 
+    color: var(--rosa)
+}
+
 
 #sobre-nos{
     background-color: var(--branco);
     padding-right: 80px;
+    margin: 60px 0;
     flex-direction: row;
     display: flex;
     justify-content: space-between;
-
+    height: 600px;
  
+}
+
+#sobre-nos .direita .botao-primario:hover{
+    background-color: var(--rosa_claro); 
+    color: var(--rosa)
 }
 #sobre-nos h2{
     text-align: start;
@@ -265,7 +299,7 @@ h3 {
     align-items: center;
     width: 40%;
 }
-#sobre-nos .direita img {
+#sobre-nos .esquerda img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -275,6 +309,7 @@ h3 {
 #sobre-nos .esquerda{
     display: flex;
     height: 600px;
+    width: 50%;
     flex-direction:column ;
     justify-items: center;
 
@@ -334,4 +369,257 @@ footer li:hover {
 
 .icons  a {
     color: var(--branco);
+}
+
+footer {
+    background-color: var(--rosa);
+    color: var(--branco);
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer img {
+    width: 50px;
+}
+
+footer p {
+    font-size: 16px;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 12px;
+}
+
+footer h5 {
+    font-size: 16px;
+    padding-bottom: 16px;
+}
+
+footer li {
+    font-size: 14px;
+    font-weight: normal;
+    padding: 0;
+    transition: opacity 0.6s ease;
+    cursor: pointer;
+}
+
+footer li:hover {
+    opacity: 60%;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-around;
+    font-size: 22px;
+}
+
+
+
+.botao-menu {
+    display: none;
+}
+
+
+.botao-menu-close {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .menu-lateral {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -250px; /* Esconde o menu fora da tela */
+        width: 250px;
+        height: 100%;
+        background-color: var(--roxo-medio); /* Cor de fundo do menu */
+        transition: left 0.3s ease;
+        z-index: 1000; /* Garante que o menu esteja acima de outros elementos */
+        flex-direction: column;
+    }
+
+    .botao-menu-close {
+        display: none;
+    }
+
+    .menu-lateral.aberto {
+        left: 0;
+    }
+
+    .menu-lateral.aberto .botao-menu-close {
+        display: block;
+    }
+
+    .menu-lateral ul {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        padding: 20px;
+    }
+
+    .menu-lateral ul li {
+        margin-bottom: 10px;
+    }
+
+    .menu-lateral ul li a {
+        color: var(--branco);
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .botao-primario {
+        display: none;
+    }
+
+    .botao-menu {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: transparent;
+        border: none;
+        color: var(--roxo-mais-escuro);
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 999; /* Garante que o botão esteja acima do menu */
+    }
+
+    .menu-lateral ul {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        text-align: left;
+    }
+
+    .corpo{
+        padding: 0 10px;
+    }
+
+    .corpo h1{
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .corpo p{
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .corpo .esquerda{
+        flex: 1;
+    }
+
+
+    .topo img {
+        display: none;
+    }
+
+    #inicio {
+        flex-direction: column-reverse;
+        text-align: center;
+        height: auto;
+    }
+
+    #inicio .esquerda {
+        align-items: center;
+    }
+
+    #inicio .esquerda, .direita {
+        width: 100%;
+    }
+
+    #inicio .direita img {
+        width: 50%;
+    }
+
+    h2 {
+        font-weight: bold;
+        font-size: 36px;
+        text-align: center;
+    }
+
+    h3 {
+        font-weight: normal;
+        font-size: 18px;
+    }
+
+    #produtos {
+        padding: 0;
+    }
+
+    .produtos {
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-top: 26px;
+        padding: 0;
+       
+    }
+
+    .produto {
+        gap: 16px;
+        padding-top: 20px;
+    }
+
+    .produto img{
+        width: 100%;
+       
+    }
+
+    #beneficios {
+        padding: 30px 0;
+        gap: 50px;
+    }
+
+    .beneficios {
+        padding: 0 100px;
+        display: flex;
+        gap: 60px;
+
+    }
+
+    .beneficios {
+        flex-direction: column;
+    }
+
+    #sobre-nos {
+        flex-direction: column;
+        padding: 20px 50px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        margin-top: 0;
+    }
+
+    #sobre-nos .esquerda h2, p{
+        width: auto;
+    }
+
+    #sobre-nos .esquerda{
+        width: 100%;
+    }
+
+    #sobre-nos .esquerda img {
+        width: 100%;;
+    }
+
+    #sobre-nos .direita {
+        width: auto;
+    }
+
+    footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer ul {
+        text-align: start;
+    }
 }

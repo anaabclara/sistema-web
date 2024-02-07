@@ -9,17 +9,26 @@
 </head>
 <body>
     <section class="topo">
-        <img src="images/icone.png" alt="">
-       <section class="menubar">
+        <a href="index.html"><img src="images/icone.png" alt="" /></a>
+        <nav class="menu-lateral">
+          <ion-icon
+                class="botao-menu-close"
+                name="close-outline"
+                onclick="toggleMenu()"></ion-icon>
           <ul>
-            <a href="index.html"><li>Página inicial</li></a>
+              <a href="index.html"><li>Página inicial</li></a>
             <a href="#produtos"><li>Produtos</li></a>
             <a href="#beneficios"><li>Benefícios</li></a>
             <a href="#sobre-nos"><li>Sobre nós</li></a>
-            <a class="botão-secundario" href=><li>Comprar agora!</li></a>
+            <a class="botão-secundario" href="">Comprar agora!</a>
           </ul>
-       </section>
-    </section> 
+        </nav>
+        <ion-icon
+          class="botao-menu"
+          name="menu-outline"
+          onclick="toggleMenu()"
+        ></ion-icon>
+      </section>
 
     <section class="corpo">
         <section class="esquerda">
@@ -83,7 +92,7 @@
 
     <section id="sobre-nos">
         <section class="esquerda">
-            <img src="images/ultima foto.jpg" alt="">
+            <img src="images/ultima_foto.jpg" alt="">
         </section>
         <section class="direita">
             <h2>Sobre nós</h2>
@@ -97,8 +106,8 @@
     </section>
     <footer>
         <section class="marca">
-            <img src="images/logo.svg" alt="">
-            <p>Mais do que um fone: um sonho!</p>
+            <img src="images/icone.png" alt="">
+            <p>Deixe a beleza da natureza florescer na sua casa!</p>
         </section>
         <section class="informacoes">
             <h5>Informações</h5>
@@ -128,11 +137,9 @@
             </section>
         </section>
     </footer>
-
-    
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
